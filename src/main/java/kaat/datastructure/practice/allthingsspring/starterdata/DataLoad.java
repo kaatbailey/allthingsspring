@@ -27,31 +27,27 @@ public class DataLoad implements CommandLineRunner {
         Author author1 = new Author();
         author1.setFirstName("George");
         author1.setLastName("Orwell");
-     Author author1Saved =  authorRepository.save(author1);
+        authorRepository.save(author1);
 
         Author author2 = new Author();
         author2.setFirstName("Jane");
         author2.setLastName("Austen");
-     Author author2Saved = authorRepository.save(author2);
+        authorRepository.save(author2);
 
         // Adding books with associated authors
         Book book1 = new Book();
         book1.setTitle("1984");
         book1.setAuthor(author1.getFirstName() + " " + author1.getLastName());
         book1.setIsbn("9780451524935");
-     Book book1saved = bookRepository.save(book1);
+        bookRepository.save(book1);
 
         Book book2 = new Book();
         book2.setTitle("Pride and Prejudice");
         book2.setAuthor(author2.getFirstName() + " " + author2.getLastName());
         book2.setIsbn("9780141439518");
-     Book book2Saved = bookRepository.save(book2);
+         bookRepository.save(book2);
 
 
-     Author author1Saved2 = authorRepository.save(author1Saved);
-     Author author2Saved2 = authorRepository.save(author2Saved);
-     Book book1Saved2 = bookRepository.save(book1);
-     Book book2Saved2 = bookRepository.save(book2);
 
         log.info("In LoadData");
         log.info("Author Count: {}, Book Count: {}", authorRepository.count(), bookRepository.count());
